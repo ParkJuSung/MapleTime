@@ -1,12 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugin/js/backspace.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugin/js/pwChk.js"></script>
-<%@ page language="java" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<!--  <script type="text/javascript" src="${pageContext.request.contextPath}/resources/plugin/js/pwChk.js"></script>-->
+
 <%@ include file="/resources/plugin/plugin.jsp" %>
 
 <html>
 <head>
     <title>Maple Time</title>
-    <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
@@ -23,9 +23,8 @@
                         <div class="card shadow-lg border-0 rounded-lg mt-5">
                             <div class="card-header"><h3 class="text-center font-weight-light my-4">Maple Time</h3></div>
                             <div class="card-body">
-                                <form name="homeForm" action="${pageContext.request.contextPath}/getocid"
-                                      method="post">
-
+                                <form name="homeForm" accept-charset="utf-8" action="${pageContext.request.contextPath}/getocid"
+                                      method="get">
                                     <div class="form-group">
                                         <label class="small mb-1" for="NickName">닉네임</label>
                                         <input class="form-control py-4" id="NickName" name="NickName" type="text"
@@ -52,10 +51,23 @@
                                 <div class="small"><a href="${pageContext.request.contextPath}/user/register">개발자에게 커피사주기
                                     후원!</a></div>
                             </div>
+                            
+                            <!--  <div class="row">-->
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="container-fluid">
+				<div class="col-xl-3 col-md-6">
+					<div class="card bg-primary text-white mb-4">
+						<div class="card-body">Primary Card</div>
+							<div class="card-footer d-flex align-items-center justify-content-between">
+								<a class="small text-white stretched-link" href="#">View Details</a>
+								<div class="small text-white"><i class="fas fa-angle-right"></i></div>
+						</div>
+					</div>
+				</div>
+			</div>
         </main>
     </div>
     <div id="layoutAuthentication_footer">
