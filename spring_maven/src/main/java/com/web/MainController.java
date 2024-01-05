@@ -70,10 +70,10 @@ public class MainController {
 			mav.addObject("dojang1st_character_class",dojang1stInfo.getCharacter_class());
 			mav.addObject("dojang1st_character_image",dojang1stInfo.getCharacter_image());
 			mav.addObject("dojang1st_dojang_floor",dojangVo.getRanking().get(0).getDojang_floor());
-			int m = Integer.parseInt(dojangVo.getRanking().get(0).getDojang_time_record()) / 60;
-			int s = Integer.parseInt(dojangVo.getRanking().get(0).getDojang_time_record()) - 60*m;
-			mav.addObject("dojang1st_time_m",m);
-			mav.addObject("dojang1st_time_s",s);
+			int dojangTimeM = Integer.parseInt(dojangVo.getRanking().get(0).getDojang_time_record()) / 60;
+			int dojangTimeS = Integer.parseInt(dojangVo.getRanking().get(0).getDojang_time_record()) - 60*dojangTimeM;
+			mav.addObject("dojang1st_time_m",dojangTimeM);
+			mav.addObject("dojang1st_time_s",dojangTimeS);
 			
 			theseedRankingVO theseedVo = mainService.selectTheseedRanking();
 			ocidVO theseed1stOcid = mainService.selectOcid(theseedVo.getRanking().get(0).getCharacter_name());
@@ -84,8 +84,12 @@ public class MainController {
 			mav.addObject("theseed1st_character_leve",theseed1stInfo.getCharacter_level());
 			mav.addObject("theseed1st_character_class",theseed1stInfo.getCharacter_class());
 			mav.addObject("theseed1st_character_image",theseed1stInfo.getCharacter_image());
-			mav.addObject("theseed1st_dojang_floor",theseedVo.getRanking().get(0).getTheseed_floor());
-			mav.addObject("theseed1st_time_record",theseedVo.getRanking().get(0).getTheseed_time_record());
+			mav.addObject("theseed1st_floor",theseedVo.getRanking().get(0).getTheseed_floor());
+			int theseedTimeM = Integer.parseInt(theseedVo.getRanking().get(0).getTheseed_time_record()) / 60;
+			int theseedTimeS = Integer.parseInt(theseedVo.getRanking().get(0).getTheseed_time_record()) - 60*dojangTimeM;
+			mav.addObject("theseed1st_time_m",theseedTimeM);
+			mav.addObject("theseed1st_time_s",theseedTimeS);
+			
 			
 			achievementRankingVO achievementVo = mainService.selectAchievementRanking();
 			ocidVO achievement1stOcid = mainService.selectOcid(achievementVo.getRanking().get(0).getCharacter_name());
@@ -96,8 +100,8 @@ public class MainController {
 			mav.addObject("achievement_character_leve",achievement1stInfo.getCharacter_level());
 			mav.addObject("achievement_character_class",achievement1stInfo.getCharacter_class());
 			mav.addObject("achievement_character_image",achievement1stInfo.getCharacter_image());
-			mav.addObject("achievement_dojang_floor",achievementVo.getRanking().get(0).getTrophy_grade());
-			mav.addObject("achievement_time_record",achievementVo.getRanking().get(0).getTrophy_score());
+			mav.addObject("achievement_getTrophy_grade",achievementVo.getRanking().get(0).getTrophy_grade());
+			mav.addObject("achievement_getTrophy_score",achievementVo.getRanking().get(0).getTrophy_score());
 		
 		}catch (Exception e) {
 			System.out.println("error message : " + e.getMessage());
