@@ -60,9 +60,26 @@
             <div class="container-fluid">
 				<div class="col-xl-3 col-md-6">
 					<div class="card bg-primary text-white mb-4">
-						<div class="card-body">Primary Card</div>
+						<div class="card-body">이번 주 무릉도장 1위</div>
 							<div class="card-footer d-flex align-items-center justify-content-between">
-								<a class="small text-white stretched-link" href="#">View Details</a>
+								<a class="small text-white stretched-link"href="#">${dojang1st_world_name} ${dojang1st_character_name} ${dojang1st_character_leve} ${dojang1st_character_class}
+								<img src = ${dojang1st_character_image}></img>
+								${dojang1st_dojang_floor}층
+								${dojang1st_time_m}분 ${dojang1st_time_s}초</a>
+								<!--  <div class="small text-white"><i class="fas fa-angle-right"></i>${dojang1st_character_name}</div>-->
+						</div>
+					</div>
+					<div class="card bg-primary text-white mb-4">
+						<div class="card-body">이번 주 더 시드 1위</div>
+							<div class="card-footer d-flex align-items-center justify-content-between">
+								<a class="small text-white stretched-link"href="#"><img src = ${theseed1st_character_image}></img></a>
+								<div class="small text-white"><i class="fas fa-angle-right"></i></div>
+						</div>
+					</div>
+					<div class="card bg-primary text-white mb-4">
+						<div class="card-body">이번 주 업적 1위</div>
+							<div class="card-footer d-flex align-items-center justify-content-between">
+								<a class="small text-white stretched-link"href="#"><img src = ${achievement_character_image}></img></a>
 								<div class="small text-white"><i class="fas fa-angle-right"></i></div>
 						</div>
 					</div>
